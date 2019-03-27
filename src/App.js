@@ -4,13 +4,15 @@ import {
   Route
 } from 'react-router-dom';
 import Banner from './components/ui/Banner';
+import Products from './components/product/Products';
 
 class App extends React.Component{
     state={};
     render(){
         return (
             <Router>
-            <Banner />
+                <Banner/>
+                <Products/>
             </Router>
         );
     }
