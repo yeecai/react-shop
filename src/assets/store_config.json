@@ -1,0 +1,14 @@
+{
+    "productsinfo":[
+        {
+            "name":"The first product",
+            "description":"database is a question",
+            "photos": ["p1/IMG_20190215_152601.jpg"]
+        },
+        {
+            "name":"The second fake product",
+            "description":"Okay",
+            "photos": ["p1/IMG_20190215_152601.jpg"]
+        }
+    ]
+}

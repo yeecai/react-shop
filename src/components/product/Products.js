@@ -1,9 +1,14 @@
 import React, { Component } from 'react';
 import Paper from '@material-ui/core/Paper';
 import { Link } from 'react-router-dom';
-import test from './IMG_20190215_152601.jpg';
+import config from '../../assets/store_config';
 import Grid from '@material-ui/core/Grid';
-import test2 from './IMG_20180807_164722.jpg'
+import test from '/home/lilian/react/react-shop/src/assets/p1/IMG_20190215_152601.jpg';
+{/*import test2 from './IMG_20180807_164722.jpg'*/}
+const numbers = [1, 2, 3, 4, 5];
+
+
+
 
 const styles = ({
     pic:{
@@ -19,39 +24,19 @@ const styles = ({
         textDecoration: 'none',
     }
 });
+const listItems = config.productsinfo.map((each) =>
+    <Grid item xs={6}>
+        <Link to="#" style={styles.title}></Link>
+        <img src={require(`../../assets/${each.photos[0]}`)} style ={styles.pic}/>
+        <div style={styles.title}>{each.name}</div>
+    </Grid>
 
+  );
 class Products extends Component{
+
     render(){
         return(
-            <div style={styles.products}>
-                <Grid container spacing={24}>
-                    <Grid item xs={6}>
-                        <Link to="#" style={styles.title}>
-                        <img src={test} style ={styles.pic}/>
-                        <div style={styles.title}>Barf</div>
-                        </Link>
-                    </Grid>
-
-                    <Grid item xs={6}>
-                        <Link to="#" style={styles.title}>
-                        <img src={test} style ={styles.pic}/>
-                        <div style={styles.title}>I'm the product.</div>
-                        </Link>
-                    </Grid>
-
-                    <Grid item xs={4} >
-                        <Link to="#" >
-                        <img src={test} style ={styles.pic}/>
-                        <div style={styles.title}>I'm the product.</div>
-                        </Link>
-                    </Grid>
-                </Grid>
-                <Grid container spacing={12}>
-                    <Grid item xs={6}>
-                    <img src={test2} style ={styles.pic}/>
-                    </Grid>
-                </Grid>
-            </div>
+            <Grid container spacing={12}>{listItems}</Grid>
         );
     }
 };
