@@ -1,5 +1,12 @@
+
+
 This is a react.js shop deployed with Git pages
 
+dependecies:
+
+material ui: npm install material ui
+
+react-router-dom: npm install ...
 
 deployment:
 
