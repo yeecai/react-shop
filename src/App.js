@@ -6,6 +6,7 @@ import {
 import Banner from './components/ui/Banner';
 
 class App extends React.Component{
+    state={};
     render(){
         return (
             <Router>

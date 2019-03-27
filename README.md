@@ -8,6 +8,8 @@ material ui: npm install material ui
 
 react-router-dom: npm install ...
 
+npm install @material-ui/icons
+
 deployment:
 
 1. Create an empty git remote repository
