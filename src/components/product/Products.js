@@ -85,13 +85,13 @@ class Products extends Component{
     }
 
     render(){
-
-        const listItems = config.productsinfo.map((each) =>
+        const listItems = config.productsinfo.map((each,i) =>
             <Product>
-                <Link to="/Product">
+                <Link to="/Product/${each.name}">
                     <Pic src={require(`../../assets/${each.photos[0]}`)}/>
                     <Title>{each.name}</Title>
                     <Price>{each.price}</Price>
+                    <Route exact path="/Product/:pid" render={(props) => <ProductDetailPage product={each}/>}/>
                 </Link>
             </Product>
           );
@@ -99,7 +99,7 @@ class Products extends Component{
             <PaperWrapper>
                 <Paper>
                     <Intro/>
-                    <Route exact path="/Product" component={ProductDetailPage}/>
+
                     <ProductList>
                         {listItems}
                     </ProductList>

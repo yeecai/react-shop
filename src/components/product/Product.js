@@ -1,14 +1,13 @@
 import React, {Component} from 'react';
-import { Route, Link } from 'react-router-dom'
+import { Route, Link, Redirect } from 'react-router-dom'
 
 class ProductDetailPage extends Component{
     render(){
-        console.log(this.props)
+        const { product } = this.props;
         return(
-        <div>I'm a product</div>
+        <div><Link to="/">I'm {product.name}</Link></div>
     )
 }
 }
-{/*<Route path="/Product" component={User} />*/}
 
 export default ProductDetailPage;
