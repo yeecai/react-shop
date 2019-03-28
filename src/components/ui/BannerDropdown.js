@@ -23,7 +23,7 @@ class MobDropdown extends Component {
                 onClick={() => this.toggleMenu(false)}>
                 <List onClick={() => this.toggleMenu(false)}>
                     <ListItem >Home</ListItem>
-                    <ListItem >product</ListItem>
+                    <ListItem >Product</ListItem>
                     <ListItem >Cart</ListItem>
                 </List>
             </SwipeableDrawer>

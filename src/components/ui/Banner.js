@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { Link,Route } from 'react-router-dom';
 import styled from 'styled-components';
 
 import { withStyles } from '@material-ui/core/styles';
@@ -9,20 +9,17 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 
-import MobDropdown from './BannerDropdown.js'
+import MobDropdown from './BannerDropdown.js';
 
 const MenuWrapper = styled.div`
-    margin: 20px;
+    padding: 40px 40px 40px 40px;
     >a{
         text-decoration: none;
     }
-    font-size:20px;
-    display:flex;
-    flex: 1 200px;
 `;
 const StoreName = styled.h3`
     color: black;
-    font-size: 25px
+    font-size: 30px;
     @media (max-width: 650px) {
         color: white;
     }
@@ -39,15 +36,14 @@ class Banner extends React.Component{
     render(){
         const{ classes } = this.props;
 
-        const productLink = <Link to={"/"}  style={{position:'absolute'}}>
-            {/*<Typography variant="button" gutterBottom>product</Typography>*/}
-            <div>PRODUCTS</div>
+        const productLink = <Link to={"/product"}  style={{position:'absolute', left: '15%'}}>
+            PRODUCT
         </Link>
         //textAlign:'right'}}>
-        const cartLink = <Link to={"/"}  style={{position:'absolute', right:'5%'}}>
-            {/*<Typography variant="button" gutterBottom>product</Typography>*/}
-            <div>CART</div>
-        </Link>
+        const cartLink = <Link to={"/"}  style={{position:'absolute', right:'5%'}}>CART</Link>
+        {/*<Typography variant="button" gutterBottom>product</Typography>*/}
+        {/*<Typography variant="button" gutterBottom>product</Typography>*/}
+        {/*<div>PRODUCTS</div>*/}
 
         let menu;
         // shop,home,cart

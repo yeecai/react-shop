@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import Intro from '../ui/Intro';
+import ProductDetailPage from './Product';
 
 import styled from 'styled-components';
 import Paper from '@material-ui/core/Paper';
-import { Link } from 'react-router-dom';
+import { Link, Route, BrowserRouter as Router} from 'react-router-dom';
 import config from '../../assets/store_config';
 import Grid from '@material-ui/core/Grid';
 {/*import test from '/home/lilian/react/react-shop/src/assets/p1/IMG_20190215_152601.jpg';
@@ -57,7 +58,7 @@ const Pic = styled.img`
     width:100%;
     height:100%;
     @media (min-width: 650px) {
-      filter: grayscale(100%);
+      filter: grayscale(70%);
       transition: filter .5s;
       &:hover {
         filter: grayscale(0.1);
@@ -72,14 +73,22 @@ const Product = styled.div`
         text-decoration: none;
     }
 `;
+{/*<Router>
+<div>
+    <Route exact path="/Product" component={ProductDetailPage} />
+</div>
+</Router>*/}
 class Products extends Component{
+
     constructor(props) {
         super(props);
     }
+
     render(){
+
         const listItems = config.productsinfo.map((each) =>
             <Product>
-                <Link to="#">
+                <Link to="/Product">
                     <Pic src={require(`../../assets/${each.photos[0]}`)}/>
                     <Title>{each.name}</Title>
                     <Price>{each.price}</Price>
@@ -90,6 +99,7 @@ class Products extends Component{
             <PaperWrapper>
                 <Paper>
                     <Intro/>
+                    <Route exact path="/Product" component={ProductDetailPage}/>
                     <ProductList>
                         {listItems}
                     </ProductList>
