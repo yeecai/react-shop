@@ -10,6 +10,8 @@ react-router-dom: npm install ...
 
 npm install @material-ui/icons
 
+npm install --save styled-components
+
 deployment:
 
 1. Create an empty git remote repository

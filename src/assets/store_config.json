@@ -7,6 +7,18 @@
             "photos": ["p1/IMG_20190215_152601.jpg"]
         },
         {
+            "name":"The first product",
+            "price":"$9999",
+            "description":"database is a question",
+            "photos": ["p1/IMG_20190215_152601.jpg"]
+        },
+        {
+            "name":"The first product",
+            "price":"$9999",
+            "description":"database is a question",
+            "photos": ["p1/IMG_20190215_152601.jpg"]
+        },
+        {
             "name":"The second fake product",
             "description":"Okay",
              "price":"$9999",

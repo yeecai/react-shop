@@ -1,14 +1,13 @@
 import React, { Component } from 'react';
+
+import styled from 'styled-components';
 import Paper from '@material-ui/core/Paper';
 import { Link } from 'react-router-dom';
 import { withStyles } from '@material-ui/core/styles';
-import PropTypes from 'prop-types';
-
 import config from '../../assets/store_config';
 import Grid from '@material-ui/core/Grid';
-import test from '/home/lilian/react/react-shop/src/assets/p1/IMG_20190215_152601.jpg';
-{/*import test2 from './IMG_20180807_164722.jpg'*/}
-
+{/*import test from '/home/lilian/react/react-shop/src/assets/p1/IMG_20190215_152601.jpg';
+*/}
 const styles = theme =>({
     pic:{
         padding:'0',
@@ -16,16 +15,7 @@ const styles = theme =>({
         height:"100%"
     },
     product:{
-        padding: theme.spacing.unit* 2,
-        position:'relative',
 
-    },
-    products:{
-        position:'relative',
-        padding:'10px',
-        flexGrow: 1,
-        textDecoration: 'none',
-        margin: '9px 19px 9px 9px',
     },
     title:{
         textDecoration: 'none',
@@ -33,25 +23,64 @@ const styles = theme =>({
     }
 });
 
+const PaperWrapper = styled.div`
+    margin: 100px 100px 0px 100px;
+
+    @media (max-width: 1024px) {
+        margin: 20px;
+    }
+    @media (max-width: 650px) {
+        margin: 20px;
+    },
+`;
+
+const ProductList = styled.div`
+    margin: 40px;
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 40px;
+
+    @media (max-width: 1024px)
+    {
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 20px;
+    }
+    @media (max-width: 650px) {
+      grid-template-columns: repeat(1, 1fr);
+      grid-gap: 20px;
+    }
+`;
+{/*const ProductListWrapper = styled.div`
+  padding: 40px;
+  @media (max-width: 650px) {
+    padding: 20px;
+  }
+`;*/}
+
+const Product = styled.div`
+    max-width: 1100px;
+    margin: 20px auto 50px;
+`;
 class Products extends Component{
     render(){
         const {classes} = this.props
         const listItems = config.productsinfo.map((each) =>
-        <Grid item xs={6}>
-            <Paper className={classes.product}>
-                <Link to="#" className ={classes.title}>
+            <Product>
+                <Link to="#">
                     <img src={require(`../../assets/${each.photos[0]}`)} alt={each.name} className ={classes.pic}/>
                     <div>{each.name}</div>
                     <div>{each.price}</div>
                 </Link>
-            </Paper>
-        </Grid>
-
+            </Product>
           );
         return(
-            <div className={classes.products}>
-                <Grid container spacing={24} >{listItems}</Grid>
-            </div>
+            <PaperWrapper>
+                <Paper>
+                    <ProductList>
+                        {listItems}
+                    </ProductList>
+                </Paper>
+            </PaperWrapper>
         );
     }
 };
