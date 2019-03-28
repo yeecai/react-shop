@@ -3,18 +3,19 @@ import styled from 'styled-components';
 
 const IntroWrapper = styled.div`
     height:200px;
-    font-size:20px;
+    font-size:30px;
     background:  ;
     align-items: center;
     justify-content: center;
     display: flex;
     padding:40px;
     @media (max-width: 650px) {
-        background: #98f4e3;
+        background: #347a6d;
+        font-size:20px;
     }
 
 `;
-{/*rgb(142, 207, 160)*/}
+
 class Intro extends Component{
     render(){
         return(

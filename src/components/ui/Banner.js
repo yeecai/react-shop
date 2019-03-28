@@ -22,7 +22,8 @@ const styles = ({
     },
     menuButton:{
         marginRight: '20px',
-        textDecoration: 'none'
+        textDecoration: 'none',
+        fontSize:'200px'
     }
 });
 const Appbar = styled.div`
@@ -36,7 +37,6 @@ const Appbar = styled.div`
       &:hover {
         filter: grayscale(0%);
       }
-
 `;
 class Banner extends React.Component{
     render(){
