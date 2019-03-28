@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import styled from 'styled-components';
 
 import { withStyles } from '@material-ui/core/styles';
 import withWidth, { isWidthDown } from '@material-ui/core/withWidth';
@@ -12,7 +13,7 @@ import MobDropdown from './BannerDropdown.js'
 
 const styles = ({
     storeName: {
-        color: "#616f32",
+        color: "black",
         fontSize: '25px'
     },
     buttons: {
@@ -22,12 +23,21 @@ const styles = ({
     menuButton:{
         marginRight: '20px',
         textDecoration: 'none'
-    },
-    appbar: {
-        padding: "0px 20px 0px",
     }
 });
+const Appbar = styled.div`
+    background:#347a6d;
+    @media (max-width: 650px) {
+        background: white;
+    }
+    @media (min-width: 650px) {
+      filter: grayscale(100%);
+      transition: filter .5s;
+      &:hover {
+        filter: grayscale(0%);
+      }
 
+`;
 class Banner extends React.Component{
     render(){
         const{ classes } = this.props;
@@ -55,7 +65,8 @@ class Banner extends React.Component{
         }
         return(
             <div>
-            <AppBar className={classes.appbar} color="default">
+            <AppBar>
+                <Appbar>
                 <Toolbar>
                 <Link to={"/"} className={classes.menuButton}>
                     <div className="logo"/>
@@ -63,6 +74,7 @@ class Banner extends React.Component{
                 </Link>
                     {menu}
                 </Toolbar>
+            </Appbar>
             </AppBar>
             </div>
         );

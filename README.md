@@ -29,4 +29,4 @@ deployment:
 
 7. check https://liliancai.github.io/react-shop, if 404 wait 5 minutes.
 
-PS: I haven't found better way to modify the published page, so each time I would remove the gh-pages packages and redeploy it, as :rm -rf node_modules/gh-pages/.cache, if you have better way to redeploy updated webpage, please leave me messages on issues or drop me a email
+PS: rm -rf node_modules/gh-pages/.cache
