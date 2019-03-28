@@ -16,13 +16,11 @@ class MobDropdown extends Component {
 
     render(){
         return(
-            <span style={{position:'absolute', right:0}}>
+            <span style={{position:'absolute', right:'5%'}}>
             <MenuIcon onClick={() => this.toggleMenu(true)}/>
             <SwipeableDrawer anchor="right"
                 open={this.state.open}
                 onClick={() => this.toggleMenu(false)}>
-                {/*onOpen={() => this.toggleMenu(true)}*/}
-                {/*onClose={() => this.toggleMenu(false)}*/}
                 <List onClick={() => this.toggleMenu(false)}>
                     <ListItem >Home</ListItem>
                     <ListItem >product</ListItem>

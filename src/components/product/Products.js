@@ -17,7 +17,7 @@ const PaperWrapper = styled.div`
         margin: 20px;
     }
     @media (max-width: 650px) {
-        margin: 20px;
+        margin: 0px;
     },
 
 `;

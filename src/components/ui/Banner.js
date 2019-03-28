@@ -11,43 +11,42 @@ import Typography from '@material-ui/core/Typography';
 
 import MobDropdown from './BannerDropdown.js'
 
-const styles = ({
-    storeName: {
-        color: "black",
-        fontSize: '25px'
-    },
-    buttons: {
-        display: "flex",
-        flex: 1
-    },
-    menuButton:{
-        marginRight: '20px',
-        textDecoration: 'none',
-        fontSize:'200px'
+const MenuWrapper = styled.div`
+    margin: 20px;
+    >a{
+        text-decoration: none;
     }
-});
-const Appbar = styled.div`
-    background:#347a6d;
+    font-size:20px;
+    display:flex;
+    flex: 1 200px;
+`;
+const StoreName = styled.h3`
+    color: black;
+    font-size: 25px
     @media (max-width: 650px) {
-        background: white;
+        color: white;
     }
-    @media (min-width: 650px) {
-      filter: grayscale(100%);
-      transition: filter .5s;
-      &:hover {
-        filter: grayscale(0%);
-      }
+    text-decoration: 'none',
+`;
+
+const Appbar = styled.div`
+    background:white;
+    @media (max-width: 650px) {
+        background:  #347a6d;
+    }
 `;
 class Banner extends React.Component{
     render(){
         const{ classes } = this.props;
 
-        const productLink = <Link to={"/"} className={classes.menuButton} style={{position:'absolute'}}>
-            <Typography variant="button" gutterBottom>product</Typography>
+        const productLink = <Link to={"/"}  style={{position:'absolute'}}>
+            {/*<Typography variant="button" gutterBottom>product</Typography>*/}
+            <div>PRODUCTS</div>
         </Link>
         //textAlign:'right'}}>
-        const cartLink = <Link to={"/"} className={classes.menuButton} style={{position:'absolute', right:0}}>
-            <Typography variant="button" gutterBottom>Cart</Typography>
+        const cartLink = <Link to={"/"}  style={{position:'absolute', right:'5%'}}>
+            {/*<Typography variant="button" gutterBottom>product</Typography>*/}
+            <div>CART</div>
         </Link>
 
         let menu;
@@ -57,10 +56,10 @@ class Banner extends React.Component{
             menu = <MobDropdown/>;
         }else{
             menu = (
-                <span className={classes.menuButton}>
+                <MenuWrapper>
                     {productLink}
                     {cartLink}
-                </span>
+                </MenuWrapper>
             );
         }
         return(
@@ -68,9 +67,8 @@ class Banner extends React.Component{
             <AppBar>
                 <Appbar>
                 <Toolbar>
-                <Link to={"/"} className={classes.menuButton}>
-                    <div className="logo"/>
-                    <h3 className={classes.storeName}>Ye'store</h3>
+                <Link to={"/"} style={{textDecoration:'none'}}>
+                    <StoreName>@Reaction</StoreName>
                 </Link>
                     {menu}
                 </Toolbar>
@@ -80,4 +78,4 @@ class Banner extends React.Component{
         );
     }
 };
-export default withWidth()(withStyles(styles)(Banner));
+export default withWidth()(Banner);
