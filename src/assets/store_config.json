@@ -1,13 +1,15 @@
 {
     "productsinfo":[
         {
-            "name":"The first product",
+            "name":"The first fake product",
+            "url": "the-first-product",
             "price":"$9999",
             "description":"database is a question",
             "photos": ["p1/mmexport1553787817041.jpg"]
         },
         {
             "name":"The second product",
+            "url": "the-sencond-product",
             "price":"$9999",
             "description":"database is a question",
             "photos": ["p1/mmexport1553788040286.jpg"]

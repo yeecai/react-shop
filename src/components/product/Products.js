@@ -86,7 +86,7 @@ class Products extends Component{
         const {config} = this.props;
         const listItems = config.productsinfo.map((each,i) =>
             <Product>
-                <Link to="/react-shop/Product">
+                <Link to={`/react-shop/Product/${each.url}`}>
                     <Pic src={require(`../../assets/${each.photos[0]}`)}/>
                     <Title>{each.name}</Title>
                     <Price>{each.price}</Price>

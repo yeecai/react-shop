@@ -18,8 +18,11 @@ class App extends React.Component{
 
             <Router>
                 <Banner/>
-                {/*<Route exact path="/Product" Component{...ProductDetailPage}/>*/}
-                <Route exact path="/react-shop/Product" render={(props) => <ProductDetailPage product={this.props}/>}/>
+                {config.productsinfo.map((each) =>
+                    <Route exact path={`/react-shop/Product/${each.url}`}
+                        render={(props) => <ProductDetailPage me={each}/>}
+                    />)
+                }
                 <Route exact path="/react-shop" render={(props) => <Intro config={config} />}/>
             </Router>
         </div>
