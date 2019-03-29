@@ -5,14 +5,14 @@
             "url": "the-first-product",
             "price":"$9999",
             "description":"database is a question",
-            "photos": ["p1/mmexport1553787817041.jpg"]
+            "photos": ["p1/00.jpg","p1/01.jpg","p1/02.jpg"]
         },
         {
             "name":"The second product",
             "url": "the-sencond-product",
             "price":"$9999",
             "description":"database is a question",
-            "photos": ["p1/mmexport1553788040286.jpg"]
+            "photos":["p2/00.jpg","p2/01.jpg","p2/02.jpg","p2/03.jpg"]
         }
     ]
 }
