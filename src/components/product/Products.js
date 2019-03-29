@@ -1,21 +1,19 @@
 import React, { Component } from 'react';
-import Intro from '../ui/Intro';
 import ProductDetailPage from './Product';
 
 import styled from 'styled-components';
 import Paper from '@material-ui/core/Paper';
 import { Link, Route, BrowserRouter as Router} from 'react-router-dom';
-import config from '../../assets/store_config';
 import Grid from '@material-ui/core/Grid';
 {/*import test from '/home/lilian/react/react-shop/src/assets/p1/IMG_20190215_152601.jpg';
 */}
 
 
 const PaperWrapper = styled.div`
-    margin: 100px 100px 0px 100px;
+    margin: 200px 100px 0px 100px;
 
     @media (max-width: 1024px) {
-        margin: 20px;
+        margin: 100px 0 0 0;
     }
     @media (max-width: 650px) {
         margin: 0px;
@@ -78,28 +76,26 @@ const Product = styled.div`
     <Route exact path="/Product" component={ProductDetailPage} />
 </div>
 </Router>*/}
-class Products extends Component{
+{/*constructor(props) {
 
-    constructor(props) {
         super(props);
-    }
 
+    }*/}
+class Products extends Component{
     render(){
+        const {config} = this.props;
         const listItems = config.productsinfo.map((each,i) =>
             <Product>
-                <Link to="/Product/${each.name}">
+                <Link to="/react-shop/Product">
                     <Pic src={require(`../../assets/${each.photos[0]}`)}/>
                     <Title>{each.name}</Title>
                     <Price>{each.price}</Price>
-                    <Route exact path="/Product/:pid" render={(props) => <ProductDetailPage product={each}/>}/>
                 </Link>
             </Product>
           );
         return(
             <PaperWrapper>
                 <Paper>
-                    <Intro/>
-
                     <ProductList>
                         {listItems}
                     </ProductList>
