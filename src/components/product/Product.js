@@ -1,7 +1,12 @@
+//productpage craousel+detail
 import React, {Component} from 'react';
-import { Route, Link, Redirect } from 'react-router-dom'
 import MobileCarousel from '../ui/MobileCarousel';
+import SiteCarousel from '../ui/SiteCarousel';
+import ProductInfo from './ProductInfo';
 import withWidth, { isWidthDown } from '@material-ui/core/withWidth';
+import Paper from '@material-ui/core/Paper';
+import styled from 'styled-components';
+
 
 class ProductDetailPage extends Component{
 
@@ -15,13 +20,15 @@ class ProductDetailPage extends Component{
 
         let carousel;
         if (isWidthDown('xs', this.props.width)){
-            carousel = <MobileCarousel photoss={photoss}/>
+            carousel = <MobileCarousel photoss={photoss}/>;
+        }else{
+            carousel = <SiteCarousel photoss={photoss}/>;
         }
 
         return(
             <div>
                 {carousel}
-                <Link to="/react-shop">I'm {me.name}</Link>
+                <ProductInfo me={me}/>
             </div>
         );
     }

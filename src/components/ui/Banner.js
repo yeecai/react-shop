@@ -61,7 +61,7 @@ class Banner extends React.Component{
                 <Appbar>
                 <Toolbar>
                 <Link to={"/react-shop"} style={{textDecoration:'none',position:'absolute',left:'5%'}}>
-                    <StoreName>@Reaction</StoreName>
+                    <StoreName>@囍</StoreName>
                 </Link>
                     {menu}
                 </Toolbar>

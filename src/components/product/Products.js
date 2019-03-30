@@ -46,7 +46,7 @@ const Pic = styled.img`
     width:100%;
     height:100%;
     @media (min-width: 650px) {
-      filter: grayscale(70%);
+      filter: grayscale(100%);
       transition: filter .5s;
       &:hover {
         filter: grayscale(0.1);
