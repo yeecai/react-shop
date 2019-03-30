@@ -14,20 +14,16 @@ import MobDropdown from './BannerDropdown.js';
 const MenuWrapper = styled.div`
     >a{
         text-decoration: none;
-        font-size:100px;
     }
 `;
 const StoreName = styled.h3`
     color: black;
-    font-size: 40px;
-    @media (max-width: 650px) {
-        font-size:25px;
-    }
+    {/*@media (max-width: 650px) {
+    }*/}
     text-decoration: 'none',
 `;
 
 const Appbar = styled.div`
-    margin:20px;
     background:white;
     /*@media (max-width: 650px) {
         background:  #347a6d;
@@ -37,11 +33,11 @@ class Banner extends React.Component{
     render(){
         const{ classes } = this.props;
 
-        const productLink = <Link to={"/react-shop/Product"}  style={{position:'absolute', right: '35%', fontSize: '30px'}}>
-            PRODUCT
+        const productLink = <Link to={"/react-shop/Product"}  style={{position:'absolute', right: '35%'}}>
+            Shop
         </Link>
         //textAlign:'right'}}>
-        const cartLink = <Link to={"/react-shop"}  style={{position:'absolute', right:'5%',fontSize: '30px'}}>CART</Link>
+        const cartLink = <Link to={"/react-shop"}  style={{position:'absolute', right:'5%'}}>Cart</Link>
         {/*<Typography variant="button" gutterBottom>product</Typography>*/}
         {/*<Typography variant="button" gutterBottom>product</Typography>*/}
         {/*<div>PRODUCTS</div>*/}

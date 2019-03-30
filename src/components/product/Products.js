@@ -9,17 +9,7 @@ import Grid from '@material-ui/core/Grid';
 */}
 
 
-const PaperWrapper = styled.div`
-    margin: 200px 100px 0px 100px;
 
-    @media (max-width: 1024px) {
-        margin: 100px 0 0 0;
-    }
-    @media (max-width: 650px) {
-        margin: 0px;
-    },
-
-`;
 
 const ProductList = styled.div`
     margin: 40px;
@@ -39,16 +29,16 @@ const ProductList = styled.div`
 
 `;
 const Title = styled.div`
-    font-size: 20px;
+    font-size: 15px;
     color:black
     @media (max-width: 650px) {
-        font-size: 15px;
+        font-size: 12px;
     }
 `;
 const Price = styled.div`
     color:black
     @media (max-width: 650px) {
-        font-size: 12px;
+        font-size: 10px;
     }
 `;
 const Pic = styled.img`
@@ -94,13 +84,9 @@ class Products extends Component{
             </Product>
           );
         return(
-            <PaperWrapper>
-                <Paper>
                     <ProductList>
                         {listItems}
                     </ProductList>
-                </Paper>
-            </PaperWrapper>
         );
     }
 };

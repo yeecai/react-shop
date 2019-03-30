@@ -5,14 +5,21 @@
             "url": "the-first-product",
             "price":"$9999",
             "description":"database is a question",
-            "photos": ["p1/00.jpg","p1/01.jpg","p1/02.jpg"]
+            "photos": ["p4/00.jpg","p4/01.jpg","p4/02.jpg"]
         },
         {
             "name":"The second product",
             "url": "the-sencond-product",
             "price":"$9999",
             "description":"database is a question",
-            "photos":["p2/00.jpg","p2/01.jpg","p2/02.jpg","p2/03.jpg"]
+            "photos":["p5/00.jpg","p5/01.jpg","p5/02.jpg"]
+        },
+        {
+            "name":"The third product",
+            "url": "the-third-product",
+            "price":"$9999",
+            "description":"database is a question",
+            "photos":["p3/00.jpg","p3/01.jpg"]
         }
     ]
 }

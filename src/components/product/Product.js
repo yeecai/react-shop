@@ -1,23 +1,30 @@
 import React, {Component} from 'react';
 import { Route, Link, Redirect } from 'react-router-dom'
+import MobileCarousel from '../ui/MobileCarousel';
+import withWidth, { isWidthDown } from '@material-ui/core/withWidth';
 
 class ProductDetailPage extends Component{
+
     render(){
         const { me } = this.props;
         {/*alert(me.photos);*/}
         const photoss = me.photos;
-        const photoList = photoss.map((each)=>
+        const photoList = photoss.map((each,i)=>
             <li><img src={require(`../../assets/${each}`)}/></li>
         );
+
+        let carousel;
+        if (isWidthDown('xs', this.props.width)){
+            carousel = <MobileCarousel photoss={photoss}/>
+        }
+
         return(
-            <div style={{padding:'200px'}}>
-                <h1>All stuff</h1>
-                <h2>Giant test heading</h2>
-                <ul>{photoList}</ul>
+            <div>
+                {carousel}
                 <Link to="/react-shop">I'm {me.name}</Link>
             </div>
         );
     }
 }
 
-export default ProductDetailPage;
+export default withWidth()(ProductDetailPage);
