@@ -3,6 +3,7 @@ import SwipeableDrawer from '@material-ui/core/SwipeableDrawer';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import MenuIcon from '@material-ui/icons/Menu';
+import { Link,Route } from 'react-router-dom';
 
 class MobDropdown extends Component {
     constructor(props) {
@@ -24,7 +25,7 @@ class MobDropdown extends Component {
                 <List onClick={() => this.toggleMenu(false)}>
                     <ListItem >Home</ListItem>
                     <ListItem >Product</ListItem>
-                    <ListItem >Cart</ListItem>
+                    <ListItem ><Link to={'/react-shop/cart'}>Cart</Link></ListItem>
                 </List>
             </SwipeableDrawer>
             </span>

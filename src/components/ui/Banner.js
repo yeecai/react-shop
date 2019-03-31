@@ -37,7 +37,7 @@ class Banner extends React.Component{
             Shop
         </Link>
         //textAlign:'right'}}>
-        const cartLink = <Link to={"/react-shop"}  style={{position:'absolute', right:'5%'}}>Cart</Link>
+        const cartLink = <Link to={"/react-shop/cart"}  style={{position:'absolute', right:'5%'}}>Cart</Link>
         {/*<Typography variant="button" gutterBottom>product</Typography>*/}
         {/*<Typography variant="button" gutterBottom>product</Typography>*/}
         {/*<div>PRODUCTS</div>*/}
