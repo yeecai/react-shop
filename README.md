@@ -1,6 +1,8 @@
 
 
-## This is a home-maded react.js shop deployed with Git pages, component by component.
+## This is a home-maded react.js shop deployed with Git pages,
+
+### component by component.
 
 ### dependecies:
 
