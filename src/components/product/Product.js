@@ -13,16 +13,16 @@ class ProductDetailPage extends Component{
     render(){
         const { me } = this.props;
         {/*alert(me.photos);*/}
-        const photoss = me.photos;
-        const photoList = photoss.map((each,i)=>
+        const photos = me.photos;
+        const photoList = photos.map((each,i)=>
             <li><img src={require(`../../assets/${each}`)}/></li>
         );
 
         let carousel;
         if (isWidthDown('xs', this.props.width)){
-            carousel = <MobileCarousel photoss={photoss}/>;
+            carousel = <MobileCarousel photos={photos}/>;
         }else{
-            carousel = <SiteCarousel photoss={photoss}/>;
+            carousel = <SiteCarousel photos={photos}/>;
         }
 
         return(

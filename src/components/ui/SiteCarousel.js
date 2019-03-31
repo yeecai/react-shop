@@ -5,8 +5,8 @@ import {Link} from 'react-router-dom';
 
 const Pic = styled.img`
     padding:0;
-    width:100%;
-    height:100%;
+    width:10%;
+    height:10%;
 }
 `;
 const SidePicBar = styled.div`
@@ -23,17 +23,16 @@ const together  = styled.div``;
 
 class SiteCarousel extends Component{
     state = {
-        biggest: 'none'
+        biggest: this.props.photos[0]
     };
 
-    pickImage(biggest) {
+    pickImage = (biggest)=> {
         this.setState({ biggest });
         console.log(biggest);
-        console.log(this.state.biggest)
+        console.log(this.state.biggest);
     }
     render(){
-        const {photoss}  = this.props;
-        this.state.biggest=photoss[0];
+        const {photos}  = this.props;
         const styles = {
           slide: {
             padding: 15,
@@ -54,14 +53,15 @@ class SiteCarousel extends Component{
         return(
             <together>
                 <SidePicBar>
-                {photoss.map((each)=>{
+                {photos.map((each)=>{
                     return(
                             <SidePic onClick={()=>this.pickImage(each)} src={require(`../../assets/${each}`)}/>
                             )
                 })}
-                {/*<Pic src={require(`../../assets/${this.state.biggest}`)}/>*/}
                 </SidePicBar>
+                <Pic src={require(`../../assets/${this.state.biggest}`)}/>
             </together>
+
         )
     }
 };
