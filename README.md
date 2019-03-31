@@ -1,18 +1,18 @@
 
 
-This is a react.js shop deployed with Git pages
+### This is a home-maded react.js shop deployed with Git pages, component by component.
 
-dependecies:
+## dependecies:
 
-material ui: npm install material ui
+material ui: (forget the command...)
 
-react-router-dom: npm install ...
+react-router-dom: ```npm install ...```
 
-npm install @material-ui/icons
+@material-ui/icons: ```npm install @material-ui/icons```
 
-npm install --save styled-components
+styled-components: ```npm install --save styled-components```
 
-deployment:
+## deployment:
 
 1. Create an empty git remote repository
 
@@ -29,4 +29,4 @@ deployment:
 
 7. check https://liliancai.github.io/react-shop, if 404 wait 5 minutes.
 
-PS: rm -rf node_modules/gh-pages/.cache
+PS: try rm -rf node_modules/gh-pages/.cache if error prompted
