@@ -1,8 +1,8 @@
 
 
-### This is a home-maded react.js shop deployed with Git pages, component by component.
+## This is a home-maded react.js shop deployed with Git pages, component by component.
 
-## dependecies:
+### dependecies:
 
 material ui: (forget the command...)
 
@@ -12,7 +12,7 @@ react-router-dom: ```npm install ...```
 
 styled-components: ```npm install --save styled-components```
 
-## deployment:
+### deployment:
 
 1. Create an empty git remote repository
 
