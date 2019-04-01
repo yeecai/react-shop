@@ -4,7 +4,7 @@ self.__precacheManifest = [
     "url": "/react-shop/static/media/02.86b98dff.jpg"
   },
   {
-    "revision": "d6ea6a5bc92431d1860a",
+    "revision": "e08fc8c0ecc19886451a",
     "url": "/react-shop/static/css/main.27c619f2.chunk.css"
   },
   {
@@ -12,8 +12,8 @@ self.__precacheManifest = [
     "url": "/react-shop/static/js/runtime~main.d71eadc7.js"
   },
   {
-    "revision": "8a6f2c1206a46ee0e3d9",
-    "url": "/react-shop/static/js/2.73850e4f.chunk.js"
+    "revision": "f8108a383ef0000a5a6b",
+    "url": "/react-shop/static/js/2.592a16cc.chunk.js"
   },
   {
     "revision": "2285f4ee2c43914a67e21f2f4bfe999e",
@@ -40,8 +40,8 @@ self.__precacheManifest = [
     "url": "/react-shop/static/media/01.719c7857.jpg"
   },
   {
-    "revision": "d6ea6a5bc92431d1860a",
-    "url": "/react-shop/static/js/main.8443fdc3.chunk.js"
+    "revision": "e08fc8c0ecc19886451a",
+    "url": "/react-shop/static/js/main.9b10bc0a.chunk.js"
   },
   {
     "revision": "84180bb9ee7b12fc74f91e0f6d418152",
@@ -80,7 +80,7 @@ self.__precacheManifest = [
     "url": "/react-shop/static/media/02.20dd21fb.jpg"
   },
   {
-    "revision": "4c3e3555398e40afaaa3db0c31bcd5ae",
+    "revision": "1457020f232a30bb3a9db1c5af1a6129",
     "url": "/react-shop/index.html"
   }
 ];
