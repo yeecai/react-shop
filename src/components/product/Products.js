@@ -5,8 +5,6 @@ import styled from 'styled-components';
 import Paper from '@material-ui/core/Paper';
 import { Link, Route, BrowserRouter as Router} from 'react-router-dom';
 import Grid from '@material-ui/core/Grid';
-{/*import test from '/home/lilian/react/react-shop/src/assets/p1/IMG_20190215_152601.jpg';
-*/}
 
 
 
@@ -46,7 +44,7 @@ const Pic = styled.img`
     width:100%;
     height:100%;
     @media (min-width: 650px) {
-      filter: grayscale(100%);
+      filter: grayscale(70%);
       transition: filter .5s;
       &:hover {
         filter: grayscale(0.1);
@@ -76,8 +74,8 @@ class Products extends Component{
         const {config} = this.props;
         const listItems = config.productsinfo.map((each,i) =>
             <Product>
-                <Link to={`/react-shop/Product/${each.url}`}>
-                    <Pic src={require(`../../assets/${each.photos[0]}`)}/>
+                <Link to={`/${config.store_slug}/product/${each.url}`}>
+                    <Pic src={require(`../../assets/${each.url}/${each.photos[0]}`)}/>
                     <Title>{each.name}</Title>
                     <Price>{each.price}</Price>
                 </Link>

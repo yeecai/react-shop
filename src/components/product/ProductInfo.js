@@ -9,15 +9,21 @@ const Description = styled.div`
 `;
 
 class ProductInfo extends Component {
+    constructor(props){
+        super(props);
+        this.state = {
+            quantity:this.props.quantity
+        }
+    }
 
     render(){
         const { me } = this.props;
         return(
             <div style={{ gridColumn: "span 2" }}>
-            <Link to="/react-shop">I'm {me.name}</Link>
+            <Link to="#">I'm {me.name}</Link>
             <Description>{me.description}</Description>
-            
-         <button>Add To Cart</button>
+
+         <button onClick={() => this.props.addToCart(this.state)}>Add To Cart</button>
             </div>
         )
     }

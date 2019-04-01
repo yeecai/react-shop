@@ -7,7 +7,6 @@ const Pic = styled.img`
     padding:0;
     width:10%;
     height:10%;
-}
 `;
 const SidePicBar = styled.div`
 width:10%;
@@ -32,7 +31,8 @@ class SiteCarousel extends Component{
         console.log(this.state.biggest);
     }
     render(){
-        const {photos}  = this.props;
+        const {photos, url}  = this.props;
+        // Get each product's photos and url
         const styles = {
           slide: {
             padding: 15,
@@ -55,11 +55,11 @@ class SiteCarousel extends Component{
                 <SidePicBar>
                 {photos.map((each)=>{
                     return(
-                            <SidePic onClick={()=>this.pickImage(each)} src={require(`../../assets/${each}`)}/>
+                            <SidePic onClick={()=>this.pickImage(each)} src={require(`../../assets/${url}/${each}`)}/>
                             )
                 })}
                 </SidePicBar>
-                <Pic src={require(`../../assets/${this.state.biggest}`)}/>
+                <Pic src={require(`../../assets/${url}/${this.state.biggest}`)}/>
             </together>
 
         )

@@ -31,13 +31,13 @@ const Appbar = styled.div`
 `;
 class Banner extends React.Component{
     render(){
-        const{ classes } = this.props;
+        const{ config } = this.props;
 
-        const productLink = <Link to={"/react-shop/Product"}  style={{position:'absolute', right: '35%'}}>
+        const productLink = <Link to={`/${config.store_slug}/product`}  style={{position:'absolute', right: '35%'}}>
             Shop
         </Link>
         //textAlign:'right'}}>
-        const cartLink = <Link to={"/react-shop/cart"}  style={{position:'absolute', right:'5%'}}>Cart</Link>
+        const cartLink = <Link to={`/${config.store_slug}/cart`}  style={{position:'absolute', right:'5%'}}>Cart</Link>
         {/*<Typography variant="button" gutterBottom>product</Typography>*/}
         {/*<Typography variant="button" gutterBottom>product</Typography>*/}
         {/*<div>PRODUCTS</div>*/}
@@ -46,7 +46,7 @@ class Banner extends React.Component{
         // shop,home,cart
         if (isWidthDown('xs', this.props.width)) {
             //alert(this.props.width);//undefined
-            menu = <MobDropdown/>;
+            menu = <MobDropdown config={config}/>;
         }else{
             menu = (
                 <MenuWrapper>
@@ -60,7 +60,7 @@ class Banner extends React.Component{
             <AppBar color="white">
                 <Appbar>
                 <Toolbar>
-                <Link to={"/react-shop"} style={{textDecoration:'none',position:'absolute',left:'5%'}}>
+                <Link to={`/${config.store_slug}`} style={{textDecoration:'none',position:'absolute',left:'5%'}}>
                     <StoreName>@囍</StoreName>
                 </Link>
                     {menu}

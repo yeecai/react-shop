@@ -30,17 +30,17 @@ class App extends React.Component{
         return (
         <div>
             <Router>
-                <Banner/>
+                <Banner config={config}/>
                 <PaperWrapper>
                     <Paper>
                         {config.productsinfo.map((each) =>
-                            <Route exact path={`/react-shop/Product/${each.url}`}
-                                render={(props) => <ProductDetailPage me={each}/>}
+                            <Route exact path={`/${config.store_slug}/product/${each.url}`}
+                                render={(props) => <ProductDetailPage me={each} config={config}/>}
                             />)
                         }
-                        <Route exact path="/react-shop" render={(props) => <Intro config={config} />}/>
+                        <Route exact path={`/${config.store_slug}`} render={(props) => <Intro config={config} />}/>
                     {/*//    <Route exact path="/react-shop/checkout" render={(props) => <Checkout config={config} />}/>*/}
-                        <Route exact path="/react-shop/cart" render={(props) => <Cart config={config}/>}/>
+                        <Route exact path={`/${config.store_slug}/cart`} render={(props) => <Cart config={config}/>}/>
 
                     </Paper>
                 </PaperWrapper>

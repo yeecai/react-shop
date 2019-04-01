@@ -10,7 +10,7 @@ const Pic = styled.img`
 
 class MobileCarousel extends Component{
     render(){
-        const { photos } = this.props;
+        const { photos,url } = this.props;
         const styles = {
           slide: {
             padding: 15,
@@ -45,7 +45,7 @@ class MobileCarousel extends Component{
                     </SwipeableViews>
                     <SwipeableViews>
                         {photos.map((each,i)=>
-                        <div><Pic src={require(`../../assets/${each}`)}/></div>)}
+                        <div><Pic src={require(`../../assets/${url}/${each}`)}/></div>)}
                     </SwipeableViews>
             </div>
         )

@@ -16,6 +16,7 @@ class MobDropdown extends Component {
     }
 
     render(){
+        const {config} = this.props;
         return(
             <span style={{position:'absolute', right:'5%'}}>
             <MenuIcon onClick={() => this.toggleMenu(true)}/>
@@ -23,9 +24,9 @@ class MobDropdown extends Component {
                 open={this.state.open}
                 onClick={() => this.toggleMenu(false)}>
                 <List onClick={() => this.toggleMenu(false)}>
-                    <ListItem >Home</ListItem>
+                    <ListItem ><Link to={`/${config.store_slug}`}>Home</Link></ListItem>
                     <ListItem >Product</ListItem>
-                    <ListItem ><Link to={'/react-shop/cart'}>Cart</Link></ListItem>
+                    <ListItem ><Link to={`/${config.store_slug}/cart`}>Cart</Link></ListItem>
                 </List>
             </SwipeableDrawer>
             </span>

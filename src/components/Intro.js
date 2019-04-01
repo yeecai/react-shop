@@ -37,7 +37,7 @@ class Intro extends Component{
             <div>
                 <IntroWrapper>
                     <ul style={{listSylte:'none'}}>
-                    <li>图片出自 <a href="https://www.dpm.org.cn/Home.html" style={{textDecoration:'none'}}>故宫博物馆</a> </li>
+                    <li>图片出自 <a href="https://www.dpm.org.cn/Home.html" style={{textDecoration:'none'}}>故宫博物馆</a></li>
                     <li>Photos by <a href="https://www.dpm.org.cn/Home.html" style={{textDecoration:'none'}}>The Palace Museum </a> <br/></li>
                     </ul>
                 </IntroWrapper>

@@ -1,25 +1,27 @@
 {
+    "store_name":"@Reaction",
+    "store_slug":"react-shop",
     "productsinfo":[
         {
             "name":"The first fake product",
             "url": "p1",
             "price":"$9999",
             "description":"database is a question",
-            "photos": ["p4/00.jpg","p4/01.jpg","p4/02.jpg"]
+            "photos": ["00.jpg","01.jpg"]
         },
         {
             "name":"The second product",
             "url": "p2",
             "price":"$9999",
             "description":"database is a question",
-            "photos":["p5/00.jpg","p5/01.jpg","p5/02.jpg"]
+            "photos":["00.jpg","01.jpg","02.jpg"]
         },
         {
             "name":"The third product",
             "url": "p3",
             "price":"$9999",
             "description":"database is a question",
-            "photos":["p3/00.jpg","p3/01.jpg"]
+            "photos":["00.jpg","01.jpg","02.jpg"]
         }
     ]
 }
