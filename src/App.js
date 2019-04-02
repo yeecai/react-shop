@@ -14,12 +14,11 @@ import Paper from '@material-ui/core/Paper';
 
 const PaperWrapper = styled.div`
     margin: 100px 100px 0px 100px;
-
     @media (max-width: 1024px) {
         margin: 100px 0 0 0;
     }
     @media (max-width: 650px) {
-        margin: 0px;
+        margin: 100px 0 0 0;;
     },
 
 `;
@@ -41,7 +40,6 @@ class App extends React.Component{
                         <Route exact path={`/${config.store_slug}`} render={(props) => <Intro config={config} />}/>
                     {/*//    <Route exact path="/react-shop/checkout" render={(props) => <Checkout config={config} />}/>*/}
                         <Route exact path={`/${config.store_slug}/cart`} render={(props) => <Cart config={config}/>}/>
-
                     </Paper>
                 </PaperWrapper>
             </Router>

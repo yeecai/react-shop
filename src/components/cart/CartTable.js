@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import styled from 'styled-components';
-import CartTable from './CartTable';
 
 const Pic = styled.img`
     // background-image: url("https://www.insidescience.org/sites/default/files/sites/default/files/images/articles/top-images/2018/5_heic1808a_crop.jpg");
@@ -63,43 +62,44 @@ const CartAndTable = styled.div`
     }
 
 `;
-class Cart extends Component {
-    constructor(props){
-        super(props);
-        this.state = {
-            items:[],
-        };
-    }
-
-    componentDidMount(){
-        const slug=`${this.props.config.store_slug}`
-        let items = JSON.parse(localStorage.getItem(slug));
-        this.setState(
-            {items :items ? items:[]}
-        )
-    }
-    updateItems = (items) =>{
-        const slug=`${this.props.config.store_slug}`;
-        this.setState({items});
-        localStorage.setItem(slug, JSON.stringify(items));
-    }
-
-    removeItem = (index) =>{
-        let items = [...this.state.items];
-        items.splice(index, 1);
-        this.updateItems(items);
-    }
-
+class CartTable extends Component {
+    //{/*const {items} = this.props;*/}
     render(){
         return (
-            <CartTable
-                items={this.state.items}
-                removeItem={this.removeItem}
-            />
-        )
+            <CartAndTable>
+                <h1>Cart</h1>
+                    <Table>
+                        <thead>
+                            <tr>
+                                <th>Product</th>
+                                <th>Amount</th>
+                                <th>Total</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        {this.props.items.map((each,i) =>
+                                <tr>
+                                    <td>
+                                        <ImageAndName>
+                                            <Pic src={require(`../../assets/${each.url}/${each.pic}`)}/>
+                                            <Name>{each.name}</Name>
+                                        </ImageAndName>
+                                    </td>
+                                    <td>1</td>
+                                    <td>{each.price}</td>
+                                    <td><span onClick={() => this.props.removeItem(i)}>x</span></td>
+                                    {/*<td><span onClick={() => alert("haha")}>x</span></td> works*/}
+                                </tr>
+                            )
+                        }
+                        </tbody>
+                    </Table>
+            </CartAndTable>
+            )
     }
 }
-export default Cart;
+export default CartTable;
 {/*<tr><td>hhh</td></tr> <image src={require(each.pic)}/> <img src={require(`../../assets/{each.url}/{each.pic}`)}/>
 //{/*<img src={require(`../../assets/${each.url}/${each.pic}`)}/>*/}
 //{/*<tr><td><img src="../../../assets/{each.url}/{each.pic}"/></td></tr>*/}

@@ -33,6 +33,7 @@ class ProductDetailPage extends Component{
         {/*this.props.history.push("/cart");*/}
     }
 
+    
     render(){
         const { me } = this.props;
         {/*alert(me.photos);*/}
