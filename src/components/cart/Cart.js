@@ -78,6 +78,9 @@ class Cart extends Component {
             {items :items ? items:[]}
         )
     }
+
+
+
     updateItems = (items) =>{
         const slug=`${this.props.config.store_slug}`;
         this.setState({items});
@@ -90,11 +93,19 @@ class Cart extends Component {
         this.updateItems(items);
     }
 
+    updateAmount = (index,value) =>{
+        let items = [...this.state.items]
+        items[index].amount = value
+        this.updateItems(items);
+    }
+
     render(){
         return (
             <CartTable
                 items={this.state.items}
+                config={this.props.config}
                 removeItem={this.removeItem}
+                updateAmount={this.updateAmount}
             />
         )
     }

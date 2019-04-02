@@ -3,22 +3,32 @@ import styled from 'styled-components';
 import SwipeableViews from 'react-swipeable-views';
 import {Link} from 'react-router-dom';
 
-const Pic = styled.img`
-    padding:0;
-    width:10%;
-    height:10%;
-`;
+
+
 const SidePicBar = styled.div`
-width:10%;
-height:10%;
+    float:left;
+    width:20%;
+    overflow:hidden;
+    padding:0 10px 0 10px;
 `;
-
+const BigPic = styled.div`
+    float:left;
+    width:70%;
+    overflow:hidden;
+`;
+const Pic = styled.img`
+     width:100%;
+     height:100%;
+`;
 const SidePic = styled.img`
-    height:100%;
     width:100%;
+    height:50%;
 `;
 
-const together  = styled.div``;
+const together  = styled.div`
+    display: flex;
+    padding: 10px;
+`;
 
 class SiteCarousel extends Component{
     state = {
@@ -59,7 +69,7 @@ class SiteCarousel extends Component{
                             )
                 })}
                 </SidePicBar>
-                <Pic src={require(`../../assets/${url}/${this.state.biggest}`)}/>
+                <BigPic><Pic src={require(`../../assets/${url}/${this.state.biggest}`)}/></BigPic>
             </together>
 
         )

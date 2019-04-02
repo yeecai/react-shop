@@ -7,10 +7,15 @@ import withWidth, { isWidthDown } from '@material-ui/core/withWidth';
 import Paper from '@material-ui/core/Paper';
 import styled from 'styled-components';
 
+const Grid = styled.div`
+    display:grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 40px;
+`;
 
 class ProductDetailPage extends Component{
     state = {
-        quantity:1
+        amount:1
     };
 
 
@@ -25,7 +30,7 @@ class ProductDetailPage extends Component{
             url:me.url,
             name:me.name,
             price:me.price,
-            quantity:state.quantity
+            amount:state.amount
         };
         items.push(item)
         localStorage.setItem(slug, JSON.stringify(items));
@@ -33,10 +38,9 @@ class ProductDetailPage extends Component{
         {/*this.props.history.push("/cart");*/}
     }
 
-    
+
     render(){
         const { me } = this.props;
-        {/*alert(me.photos);*/}
         const photos = me.photos;
         const photoList = photos.map((each,i)=>
             <li><img src={require(`../../assets/${me.url}/${each}`)}/></li>
@@ -50,10 +54,17 @@ class ProductDetailPage extends Component{
         }
 
         return(
-            <div>
+            <Grid>
+                <div style={{ gridColumn:"span 3", padding:"10px"}}>
                 {carousel}
-                <ProductInfo me={me} addToCart={this.addToCart}/>
-            </div>
+                </div>
+                <ProductInfo
+                    me={me}
+                    amount={this.state.amount}
+                    addToCart={this.addToCart}
+                    style={{ gridColumn: "span 2"}}
+                />
+            </Grid>
         );
     }
 }

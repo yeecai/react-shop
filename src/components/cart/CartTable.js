@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 import styled from 'styled-components';
+import TextField from '@material-ui/core/TextField';
+import { Route, Link, Redirect } from 'react-router-dom';
 
 const Pic = styled.img`
     // background-image: url("https://www.insidescience.org/sites/default/files/sites/default/files/images/articles/top-images/2018/5_heic1808a_crop.jpg");
@@ -55,10 +57,10 @@ const Name = styled.div`
 
 `;
 const CartAndTable = styled.div`
-    //padding:10px;
+    padding:10px;
     margin: 0 30px 0 30px;
     @media (max-width: 650px) {
-        margin:0;
+        margin:10px;
     }
 
 `;
@@ -67,7 +69,7 @@ class CartTable extends Component {
     render(){
         return (
             <CartAndTable>
-                <h1>Cart</h1>
+                <h2>Cart</h2>
                     <Table>
                         <thead>
                             <tr>
@@ -83,11 +85,21 @@ class CartTable extends Component {
                                     <td>
                                         <ImageAndName>
                                             <Pic src={require(`../../assets/${each.url}/${each.pic}`)}/>
-                                            <Name>{each.name}</Name>
+                                            <Name><Link to={`/${this.props.config.store_slug}/product/${each.url}`}>{each.name}</Link></Name>
                                         </ImageAndName>
                                     </td>
-                                    <td>1</td>
-                                    <td>{each.price}</td>
+                                    <td>
+                                        <TextField
+                                            value={each.amount}
+                                            type="number"
+                                            margin="normal"
+                                            onChange={(e) =>{
+                                                if (e.target.value < 0) e.target.value = 0;
+                                                this.props.updateAmount(i, e.target.value)}}
+                                            style={{ width:"40px" }}
+                                        />
+                                    </td>
+                                    <td>${(each.price*each.amount).toFixed(2)}</td>
                                     <td><span onClick={() => this.props.removeItem(i)}>x</span></td>
                                     {/*<td><span onClick={() => alert("haha")}>x</span></td> works*/}
                                 </tr>
