@@ -29,17 +29,29 @@ class ProductDetailPage extends Component{
         let items = JSON.parse(localStorage.getItem(slug));
         items = Array.isArray(items) ?items: [];
 
-        const item = {
-            pic:me.photos[0],
-            url:me.url,
-            name:me.name,
-            price:me.price,
-            amount:state.amount
-        };
-        items.push(item)
+        // Here check if the item in items add amount else add item
+        const itemIndex = items.findIndex(e=> e.name===me.name);
+
+        if (itemIndex >= 0){
+        // console.log(items[itemIndex].amount);
+//             var itemAmout = Number(items[itemIndex].amount)
+// //            console.log(itemAmout);
+//             itemAmout += Number(this.state.amount);
+//             console.log(me.amount);
+//             items[itemIndex].amount = itemAmout;
+            items[itemIndex].amount += state.amount;
+        }
+        else {
+            const item = {
+                pic:me.photos[0],
+                url:me.url,
+                name:me.name,
+                price:me.price,
+                amount:state.amount
+            };
+            items.push(item)
+        }
         localStorage.setItem(slug, JSON.stringify(items));
-        {/*this.props.updateNumber(items.length)*/}
-        {/*this.props.history.push("/cart");*/}
     }
 
 
