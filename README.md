@@ -4,6 +4,8 @@
 
 ### component by component.
 
+### [demo](https://liliancai.github.io/react-shop/)
+
 ### dependecies:
 
 material ui: (forget the command...)
