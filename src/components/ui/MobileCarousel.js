@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import styled from 'styled-components';
 import SwipeableViews from 'react-swipeable-views';
+
 const Pic = styled.img`
     padding:0;
     width:100%;
@@ -29,20 +30,8 @@ class MobileCarousel extends Component{
         };
 
         return(
-
             <div>
-                <p>I'm a mobile carousel, swipe me!</p>
-                    <SwipeableViews>
-                        <div style={Object.assign({}, styles.slide, styles.slide1)}>
-                            slide n°1
-                        </div>
-                        <div style={Object.assign({}, styles.slide, styles.slide2)}>
-                            slide n°2
-                        </div>
-                        <div style={Object.assign({}, styles.slide, styles.slide3)}>
-                            slide n°3
-                        </div>
-                    </SwipeableViews>
+                <p>Swipe me!</p>
                     <SwipeableViews>
                         {photos.map((each,i)=>
                         <div><Pic src={require(`../../assets/${url}/${each}`)}/></div>)}

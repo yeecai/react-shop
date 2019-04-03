@@ -65,8 +65,8 @@ class SiteCarousel extends Component{
                 <SidePicBar>
                 {photos.map((each)=>{
                     return(
-                            <SidePic onClick={()=>this.pickImage(each)} src={require(`../../assets/${url}/${each}`)}/>
-                            )
+                        <SidePic onClick={()=>this.pickImage(each)} src={require(`../../assets/${url}/${each}`)}/>
+                        )
                 })}
                 </SidePicBar>
                 <BigPic><Pic src={require(`../../assets/${url}/${this.state.biggest}`)}/></BigPic>

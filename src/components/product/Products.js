@@ -59,16 +59,7 @@ const Product = styled.div`
         text-decoration: none;
     }
 `;
-{/*<Router>
-<div>
-    <Route exact path="/Product" component={ProductDetailPage} />
-</div>
-</Router>*/}
-{/*constructor(props) {
 
-        super(props);
-
-    }*/}
 class Products extends Component{
     render(){
         const {config} = this.props;
@@ -77,7 +68,7 @@ class Products extends Component{
                 <Link to={`/${config.store_slug}/product/${each.url}`}>
                     <Pic src={require(`../../assets/${each.url}/${each.photos[0]}`)}/>
                     <Title>{each.name}</Title>
-                    <Price>{each.price}</Price>
+                    <Price>£{each.price}</Price>
                 </Link>
             </Product>
           );

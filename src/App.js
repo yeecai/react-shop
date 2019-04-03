@@ -7,6 +7,8 @@ import Banner from './components/ui/Banner';
 import Products from './components/product/Products';
 import ProductDetailPage from './components/product/Product';
 import Cart from './components/cart/Cart';
+import Checkout from './components/checkout/Checkout';
+
 import Intro from './components/Intro';
 import config from './assets/store_config';
 import styled from 'styled-components';
@@ -40,6 +42,8 @@ class App extends React.Component{
                         <Route exact path={`/${config.store_slug}`} render={(props) => <Intro config={config} />}/>
                     {/*//    <Route exact path="/react-shop/checkout" render={(props) => <Checkout config={config} />}/>*/}
                         <Route exact path={`/${config.store_slug}/cart`} render={(props) => <Cart config={config}/>}/>
+                        <Route exact path={`/${config.store_slug}/checkout`} render={(props) => <Checkout config={config}/>}/>
+
                     </Paper>
                 </PaperWrapper>
             </Router>

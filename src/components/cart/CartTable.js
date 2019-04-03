@@ -99,7 +99,7 @@ class CartTable extends Component {
                                             style={{ width:"40px" }}
                                         />
                                     </td>
-                                    <td>${(each.price*each.amount).toFixed(2)}</td>
+                                    <td>£{(each.price*each.amount).toFixed(2)}</td>
                                     <td><span onClick={() => this.props.removeItem(i)}>x</span></td>
                                     {/*<td><span onClick={() => alert("haha")}>x</span></td> works*/}
                                 </tr>

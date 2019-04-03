@@ -26,7 +26,7 @@ class ProductInfo extends Component {
             <div style={{ textAlign: "center", justifyContent: "center", alignItems: "center" }}>
             <div>{me.name}</div>
             <Description>{me.description}</Description>
-            <p>${me.price}</p>
+            <p>£{me.price}</p>
             <TextField
                 value={this.state.amount}
                 type="number"
