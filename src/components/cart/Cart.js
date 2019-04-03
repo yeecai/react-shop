@@ -54,6 +54,12 @@ class Cart extends Component {
     }
 
     render(){
+        let subTotal;
+        if(this.state.items.length){
+            subTotal = this.state.items
+            .map(e =>(e.amount*e.price))
+            .reduce((a,b) => a+Number(b))
+        }
         return (
             <Together>
                 <CartTable
@@ -63,7 +69,7 @@ class Cart extends Component {
                     updateAmount={this.updateAmount}
                 />
                 <SubAndCheck>
-                    <Sub>Subtotal:</Sub>
+                    <Sub>Subtotal:£{subTotal}</Sub>
                     <Link to={`/${this.props.config.store_slug}/checkout`}><Button color="default" variant="raised">Checkout</Button></Link>
                 </SubAndCheck>
             </Together>

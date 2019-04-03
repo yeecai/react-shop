@@ -36,6 +36,7 @@ class CartCheckout extends Component {
         super(props);
         this.state = {
             items:[],
+            shipping:10
         };
     }
 
@@ -47,6 +48,12 @@ class CartCheckout extends Component {
         )
     }
     render(){
+        let subTotal;
+        if(this.state.items.length){
+            subTotal = this.state.items
+            .map(e =>(e.amount*e.price))
+            .reduce((a,b) => a+Number(b))
+        }
         return (
             <div>
                 <h2>Summary</h2>
@@ -68,6 +75,9 @@ class CartCheckout extends Component {
                         }
                         </tbody>
                     </Table>
+                    <div>Subtotal:£{subTotal}</div>
+                    <div>Shipping:£{this.state.shipping}</div>
+                    <div>Total:£{subTotal+this.state.shipping}</div>
             </div>
             )
     }
