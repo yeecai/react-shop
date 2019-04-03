@@ -13,7 +13,7 @@ class ProductInfo extends Component {
     constructor(props){
         super(props);
         this.state = {
-            amount:this.props.amount
+            amount:1
         }
     }
 

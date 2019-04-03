@@ -18,10 +18,6 @@ const Grid = styled.div`
 `;
 
 class ProductDetailPage extends Component{
-    state = {
-        amount:1
-    };
-
 
     addToCart = (state) =>{ //state=quantity
         const { me,config } = this.props;
@@ -39,7 +35,7 @@ class ProductDetailPage extends Component{
 //             itemAmout += Number(this.state.amount);
 //             console.log(me.amount);
 //             items[itemIndex].amount = itemAmout;
-            items[itemIndex].amount += state.amount;
+            items[itemIndex].amount += Number(state.amount);
         }
         else {
             const item = {
@@ -76,7 +72,6 @@ class ProductDetailPage extends Component{
                 </div>
                 <ProductInfo
                     me={me}
-                    amount={this.state.amount}
                     addToCart={this.addToCart}
                     style={{ gridColumn: "span 2"}}
                 />
