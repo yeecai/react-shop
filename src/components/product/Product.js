@@ -11,6 +11,10 @@ const Grid = styled.div`
     display:grid;
     grid-template-columns: repeat(5, 1fr);
     grid-gap: 40px;
+    @media (max-width: 650px) {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
 `;
 
 class ProductDetailPage extends Component{

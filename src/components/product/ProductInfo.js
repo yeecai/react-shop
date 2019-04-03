@@ -23,15 +23,16 @@ class ProductInfo extends Component {
     render(){
         const { me } = this.props;
         return(
-            <div style={{ gridColumn: "span 2" }}>
+            <div style={{ textAlign: "center", justifyContent: "center", alignItems: "center" }}>
             <div>{me.name}</div>
             <Description>{me.description}</Description>
+            <p>${me.price}</p>
             <TextField
                 value={this.state.amount}
                 type="number"
                 margin="normal"
                 onChange={this.handleChange('amount')}
-                style={{ width:"40px" }}
+                style={{ width:"30px" }}
             />
             <Button color="default" variant="raised"
                     onClick={() => this.props.addToCart(this.state)}>Add To Cart</Button>

@@ -31,7 +31,7 @@ class MobileCarousel extends Component{
         return(
 
             <div>
-                <p>I'm a mobile carousel</p>
+                <p>I'm a mobile carousel, swipe me!</p>
                     <SwipeableViews>
                         <div style={Object.assign({}, styles.slide, styles.slide1)}>
                             slide n°1
