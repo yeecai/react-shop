@@ -4,7 +4,7 @@
 
 ### component by component.
 
-### [demo](https://liliancai.github.io/react-shop/)
+### [demo](https://yeecai.github.io/react-shop/)
 
 ### dependecies:
 
